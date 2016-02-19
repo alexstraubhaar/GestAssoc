@@ -1,0 +1,26 @@
+'Ce que l'on peut faire avec le programme : 
+
+	--> gérer les membres (ajouter, retirer un membre, vérifier si le membre a payé ses cotisations, etc.)
+	--> gérer les comptas (par evenement, pour l'assoc en général)
+	--> gérer les stocks  (possibilité de trier par type de stock)
+	
+	TABLES : 
+		membres
+		ecritures_comptables
+			ID AUTO INCREMENT
+			DATE date
+			(ENUM) Type // cash, immobilier, achat, vente, etc.
+			
+			
+		evenement_comptables
+			ID AUTO INCREMENT
+			String Title
+			String raison 
+			Float amount
+			Boolean isDepense
+			
+		ecritures_stock
+			ID AUTO INCREMENT
+			String Title
+			String Categorie
+		
