@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEntreecompteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEntreecompteLabel_identreeCompte}" for="identreeCompte" />
+                    <h:inputText id="identreeCompte" value="#{entreecompteController.selected.identreeCompte}" title="#{bundle.CreateEntreecompteTitle_identreeCompte}" required="true" requiredMessage="#{bundle.CreateEntreecompteRequiredMessage_identreeCompte}"/>
+                    <h:outputLabel value="#{bundle.CreateEntreecompteLabel_date}" for="date" />
+                    <h:inputText id="date" value="#{entreecompteController.selected.date}" title="#{bundle.CreateEntreecompteTitle_date}" required="true" requiredMessage="#{bundle.CreateEntreecompteRequiredMessage_date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEntreecompteLabel_description}" for="description" />
+                    <h:inputTextarea rows="4" cols="30" id="description" value="#{entreecompteController.selected.description}" title="#{bundle.CreateEntreecompteTitle_description}" required="true" requiredMessage="#{bundle.CreateEntreecompteRequiredMessage_description}"/>
+                    <h:outputLabel value="#{bundle.CreateEntreecompteLabel_montant}" for="montant" />
+                    <h:inputText id="montant" value="#{entreecompteController.selected.montant}" title="#{bundle.CreateEntreecompteTitle_montant}" required="true" requiredMessage="#{bundle.CreateEntreecompteRequiredMessage_montant}"/>
+                    <h:outputLabel value="#{bundle.CreateEntreecompteLabel_compte}" for="compte" />
+                    <h:selectOneMenu id="compte" value="#{entreecompteController.selected.compte}" title="#{bundle.CreateEntreecompteTitle_compte}" >
+                        <f:selectItems value="#{compteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{entreecompteController.create}" value="#{bundle.CreateEntreecompteSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{entreecompteController.prepareList}" value="#{bundle.CreateEntreecompteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEntreecompteIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMembresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMembresEmpty}" rendered="#{membresController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{membresController.items.rowCount > 0}">
+                    <h:outputText value="#{membresController.pagination.pageFirstItem + 1}..#{membresController.pagination.pageLastItem + 1}/#{membresController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{membresController.previous}" value="#{bundle.Previous} #{membresController.pagination.pageSize}" rendered="#{membresController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{membresController.next}" value="#{bundle.Next} #{membresController.pagination.pageSize}" rendered="#{membresController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{membresController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMembresTitle_idmembres}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idmembres}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMembresTitle_nom}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nom}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMembresTitle_prenom}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.prenom}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMembresTitle_derniereCoti}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.derniereCoti}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMembresTitle_statut}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.statut}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{membresController.prepareView}" value="#{bundle.ListMembresViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{membresController.prepareEdit}" value="#{bundle.ListMembresEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{membresController.destroy}" value="#{bundle.ListMembresDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{membresController.prepareCreate}" value="#{bundle.ListMembresCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListMembresIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
