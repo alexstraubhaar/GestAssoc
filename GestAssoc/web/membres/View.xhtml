@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMembresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMembresLabel_idmembres}"/>
+                    <h:outputText value="#{membresController.selected.idmembres}" title="#{bundle.ViewMembresTitle_idmembres}"/>
+                    <h:outputText value="#{bundle.ViewMembresLabel_nom}"/>
+                    <h:outputText value="#{membresController.selected.nom}" title="#{bundle.ViewMembresTitle_nom}"/>
+                    <h:outputText value="#{bundle.ViewMembresLabel_prenom}"/>
+                    <h:outputText value="#{membresController.selected.prenom}" title="#{bundle.ViewMembresTitle_prenom}"/>
+                    <h:outputText value="#{bundle.ViewMembresLabel_derniereCoti}"/>
+                    <h:outputText value="#{membresController.selected.derniereCoti}" title="#{bundle.ViewMembresTitle_derniereCoti}"/>
+                    <h:outputText value="#{bundle.ViewMembresLabel_statut}"/>
+                    <h:outputText value="#{membresController.selected.statut}" title="#{bundle.ViewMembresTitle_statut}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{membresController.destroyAndView}" value="#{bundle.ViewMembresDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMembresEditLink}"/>
+                <br />
+                <h:commandLink action="#{membresController.prepareCreate}" value="#{bundle.ViewMembresCreateLink}" />
+                <br />
+                <h:commandLink action="#{membresController.prepareList}" value="#{bundle.ViewMembresShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMembresIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
