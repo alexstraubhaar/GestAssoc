@@ -24,8 +24,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
- * @author User
+ * @author lucas.beltrame
  */
 @Entity
 @Table(name = "evenement")

@@ -11,8 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
- * @author User
+ * @author lucas.beltrame
  */
 @Stateless
 public class StatutFacade extends AbstractFacade<Statut> {

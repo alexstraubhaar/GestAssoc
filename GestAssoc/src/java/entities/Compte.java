@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- *
- * @author User
+ * @author lucas.beltrame
  */
 @Entity
 @Table(name = "compte")

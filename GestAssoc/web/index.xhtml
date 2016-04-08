@@ -3,25 +3,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Gest'Assoc</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
+        <h:outputStylesheet name="css/bootstrap.min.css"/>
+        <h:outputStylesheet name="css/custom.css"/>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     </h:head>
     <h:body>
-        <h1>Hello from Facelets</h1>
-        <br />
-        <h:link outcome="/compte/List" value="Show All Compte Items"/>
-        <br />
-        <h:link outcome="/entreecompte/List" value="Show All Entreecompte Items"/>
-        <br />
-        <h:link outcome="/evenement/List" value="Show All Evenement Items"/>
-        <br />
-        <h:link outcome="/item/List" value="Show All Item Items"/>
-        <br />
-        <h:link outcome="/membres/List" value="Show All Membres Items"/>
-        <br />
-        <h:link outcome="/statut/List" value="Show All Statut Items"/>
-        <br />
-        <h:link outcome="/stock/List" value="Show All Stock Items"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Gest'Assoc</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-2">
+                    <h:link outcome="/compte/List"  class="btn btn-sq-lg btn-primary">
+                        <i class="fa fa-university fa-5x"></i><br></br>
+                        <p>Comptes</p>
+                    </h:link>
+                </div>
+                <div class="col-md-2">
+                     <h:link outcome="/entreecompte/List" class="btn btn-sq-lg btn-primary">
+                          <i class="fa fa-user fa-5x"></i><br></br>
+                          <p>Entrée compte</p>
+                    </h:link>
+                </div>
+                <div class="col-md-2">
+                     <h:link outcome="/evenement/List" class="btn btn-sq-lg btn-primary">
+                          <i class="fa fa-calendar fa-5x"></i><br></br>
+                          <p>Événements</p>
+                    </h:link>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <div class="row"><div class="col-xs-12"></div></div>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-2">
+                     <h:link outcome="/item/List" class="btn btn-sq-lg btn-primary">
+                            <i class="fa fa-cube fa-5x"></i><br></br>
+                            <p>Objets</p>
+                     </h:link>
+                </div>
+                <div class="col-md-2">
+                    <h:link outcome="/membres/List" class="btn btn-sq-lg btn-primary">
+                        <i class="fa fa-users fa-5x"></i><br></br>
+                        <p>Membres</p>
+                    </h:link>
+                </div>
+                <div class="col-md-2">
+                    <h:link outcome="/stock/List" class="btn btn-sq-lg btn-primary">
+                         <i class="fa fa-cubes fa-5x"></i><br></br>
+                         <p>Stock</p>
+                         
+                    </h:link>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
     </h:body>
 
 

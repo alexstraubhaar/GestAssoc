@@ -9,8 +9,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
- *
- * @author User
+ * @author lucas.beltrame
  */
 public abstract class AbstractFacade<T> {
     private Class<T> entityClass;
