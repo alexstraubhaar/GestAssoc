@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title>Gest'Assoc</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
@@ -17,6 +19,11 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center">Bienvenue #{request.remoteUser}</h4>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-3">
                 </div>
                 <div class="col-md-2">
@@ -24,6 +31,8 @@
                         <i class="fa fa-university fa-5x"></i><br></br>
                         <p>Comptes</p>
                     </h:link>
+                                <p>Request a secure Admin page <a href="secureAdmin/pageA.html">here!</a></p>
+<p>Request a secure User page <a href="secureUser/pageU.html" >here!</a></p>
                 </div>
                 <div class="col-md-2">
                      <h:link outcome="/entreecompte/List" class="btn btn-sq-lg btn-primary">

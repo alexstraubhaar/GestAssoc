@@ -21,6 +21,62 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>AdminContraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Admin</web-resource-name>
+            <description/>
+            <url-pattern>/secureAdmin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>AdminRole</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>UserContraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>User</web-resource-name>
+            <description/>
+            <url-pattern>/secureUser/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>AdminRole</role-name>
+            <role-name>UserRole</role-name>
+            <role-name>ComptaRole</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>ComptaContraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>Compta</web-resource-name>
+            <description/>
+            <url-pattern>/faces/entreecompte/*</url-pattern>
+            <url-pattern>/faces/compte/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>ComptaRole</role-name>
+            <role-name>AdminRole</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>file</realm-name>
+    </login-config>
+    <security-role>
+        <description>Administrateur</description>
+        <role-name>AdminRole</role-name>
+    </security-role>
+    <security-role>
+        <description>Utilisateurs classique</description>
+        <role-name>UserRole</role-name>
+    </security-role>
+    <security-role>
+        <description>Accès à la comptabilité</description>
+        <role-name>ComptaRole</role-name>
+    </security-role>
     <resource-ref>
         <res-ref-name>jdbc/myDatasource</res-ref-name>
         <res-type>javax.sql.ConnectionPoolDataSource</res-type>
