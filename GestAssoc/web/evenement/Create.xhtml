@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateEvenementLabel_idevenement}" for="idevenement" />
-                    <h:inputText id="idevenement" value="#{evenementController.selected.idevenement}" title="#{bundle.CreateEvenementTitle_idevenement}" required="true" requiredMessage="#{bundle.CreateEvenementRequiredMessage_idevenement}"/>
                     <h:outputLabel value="#{bundle.CreateEvenementLabel_nom}" for="nom" />
                     <h:inputText id="nom" value="#{evenementController.selected.nom}" title="#{bundle.CreateEvenementTitle_nom}" required="true" requiredMessage="#{bundle.CreateEvenementRequiredMessage_nom}"/>
                     <h:outputLabel value="#{bundle.CreateEvenementLabel_description}" for="description" />

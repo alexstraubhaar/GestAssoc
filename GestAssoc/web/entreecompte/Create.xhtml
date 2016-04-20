@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateEntreecompteLabel_identreeCompte}" for="identreeCompte" />
-                    <h:inputText id="identreeCompte" value="#{entreecompteController.selected.identreeCompte}" title="#{bundle.CreateEntreecompteTitle_identreeCompte}" required="true" requiredMessage="#{bundle.CreateEntreecompteRequiredMessage_identreeCompte}"/>
                     <h:outputLabel value="#{bundle.CreateEntreecompteLabel_date}" for="date" />
                     <h:inputText id="date" value="#{entreecompteController.selected.date}" title="#{bundle.CreateEntreecompteTitle_date}" required="true" requiredMessage="#{bundle.CreateEntreecompteRequiredMessage_date}">
                         <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
