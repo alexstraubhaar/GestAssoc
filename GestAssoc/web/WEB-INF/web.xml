@@ -26,7 +26,10 @@
         <web-resource-collection>
             <web-resource-name>Admin</web-resource-name>
             <description/>
-            <url-pattern>/secureAdmin/*</url-pattern>
+            <url-pattern>/faces/item/*</url-pattern>
+            <url-pattern>/faces/evenement/*</url-pattern>
+            <url-pattern>/faces/stock/*</url-pattern>
+            <url-pattern>/faces/membres/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <description/>
@@ -38,7 +41,7 @@
         <web-resource-collection>
             <web-resource-name>User</web-resource-name>
             <description/>
-            <url-pattern>/secureUser/*</url-pattern>
+            <url-pattern>/faces/index.xhtml</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <description/>
